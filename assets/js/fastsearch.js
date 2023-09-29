@@ -13,7 +13,7 @@ var resultsAvailable = false; // Did we get any search results?
 document.addEventListener('keydown', function (event) {
 
   // CMD-/ to show / hide Search ,metaKey 键改为 altKey ，使用 alt键替换
-  if (event.altKey && event.key === '/') {
+  if (event.ctrlKey && event.key === '/') {
     // Load json search index if first time invoking search
     // Means we don't load json unless searches are going to happen; keep user payload small unless needed
     if (firstRun) {
@@ -44,7 +44,8 @@ document.addEventListener('keydown', function (event) {
   }
 
   // DOWN (40) arrow
-  if (event.key == 'ArrowDown') {
+  // 添加快捷键 altkey +  j 往下
+  if (event.key == 'ArrowDown' ||  (event.ctrlKey && event.key === 'j')) {
     if (searchVisible && resultsAvailable) {
       // console.log("down");
       event.preventDefault(); // stop window from scrolling
@@ -54,8 +55,20 @@ document.addEventListener('keydown', function (event) {
     }
   }
 
+  // if (event.altKey && event.key === 'j') {
+  //   if (searchVisible && resultsAvailable) {
+  //     // console.log("down");
+  //     event.preventDefault(); // stop window from scrolling
+  //     if (document.activeElement == maininput) { first.focus(); } // if the currently focused element is the main input --> focus the first <li>
+  //     else if (document.activeElement == last) { last.focus(); } // if we're at the bottom, stay there
+  //     else { document.activeElement.parentElement.nextSibling.firstElementChild.focus(); } // otherwise select the next search result
+  //   }
+  // }
+
+
   // UP (38) arrow
-  if (event.key == 'ArrowUp') {
+  // 添加快捷键 altkey +  k 往上
+  if (event.key == 'ArrowUp' || (event.ctrlKey && event.key === 'k') ) {
     if (searchVisible && resultsAvailable) {
       event.preventDefault(); // stop window from scrolling
       if (document.activeElement == maininput) { maininput.focus(); } // If we're in the input box, do nothing
