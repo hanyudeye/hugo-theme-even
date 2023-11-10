@@ -68,6 +68,7 @@ $size in $global-headings {
 .container {
   margin: 0 auto;
   width: $global-body-width;
+  background-color: $yellow !important;
 }
 
 // 添加段落的样式

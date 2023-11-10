@@ -21,6 +21,7 @@ $theme-color-map: (
 @if not(map-has-key($theme-color-map, $theme-color-config)) {
   $theme-color-config: 'Default';
 }
+
 $theme-color-list: map-get($theme-color-map, $theme-color-config);
 
 // Default theme color of the site.
@@ -36,6 +37,7 @@ $white: #fefefe !default;
 $light-gray: #e6e6e6 !default;
 $gray: #cacaca !default;
 $dark-gray: #8a8a8a !default;
+$yellow: #f5f5d5 !default;
 
 
 // ========== Global ========== //
@@ -57,13 +59,13 @@ $global-lineheight: 1.8 !default;
 
 // Font family of the site.
 // $global-font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif !default;
-$global-font-family: 'PingFang SC', 'Lantinghei SC', 'Microsoft Yahei', 'Hiragino Sans GB','Microsoft Sans Serif', 'WenQuanYi Micro Hei', 'sans-serif' !default;
+$global-font-family: 'PingFang SC', 'Lantinghei SC', 'Microsoft Yahei', 'Hiragino Sans GB', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', 'sans-serif' !default;
 
 // Serif font family of the site.
 $global-serif-font-family: Athelas, STHeiti, Microsoft Yahei, serif !default;
 
 // Background color of the site.
-$global-background: $white !default;
+$global-background: $yellow !default;
 
 // Headings font size of the site.
 $global-headings: (
@@ -72,8 +74,7 @@ $global-headings: (
   h3: 20px,
   h4: 16px,
   h5: 14px,
-  h6: 14px
-) !default;
+  h6: 14px) !default;
 
 
 // ========== Header ========== //
@@ -83,15 +84,16 @@ $header-padding: 20px 20px !default;
 // Font family: Chancery
 @font-face {
   font-family: 'Chancery';
-  src: url('../fonts/chancery/apple-chancery-webfont.eot');
-  src: local('Apple Chancery'), url('../fonts/chancery/apple-chancery-webfont.eot?#iefix') format('embedded-opentype'),
+  src: url('../fonts/chancery/apple-chancery-webfont.eot'
+  );
+src: local('Apple Chancery'), url('../fonts/chancery/apple-chancery-webfont.eot?#iefix') format('embedded-opentype'),
   url('../fonts/chancery/apple-chancery-webfont.woff2') format('woff2'),
   url('../fonts/chancery/apple-chancery-webfont.woff') format('woff'),
   url('../fonts/chancery/apple-chancery-webfont.ttf') format('truetype'),
   url('../fonts/chancery/apple-chancery-webfont.svg#apple-chancery') format('svg');
-  font-weight: lighter;
-  font-style: normal;
-  font-display: swap;
+font-weight: lighter;
+font-style: normal;
+font-display: swap;
 }
 
 // Font size of the logo.
@@ -99,7 +101,7 @@ $logo-font-size: 48px !default;
 
 // Font family of the logo.
 // $logo-font-family: 'Chancery', cursive, LiSu, sans-serif !default;
-$logo-font-family: 'Chancery',  LiSu, sans-serif !default;
+$logo-font-family: 'Chancery', LiSu, sans-serif !default;
 
 // Margin of menu item.
 $menu-item-margin-left: 10px !default;
@@ -198,7 +200,7 @@ $code-font-size: 0.9em !default;
 
 // Font family of the code.
 $code-font-family: Consolas, Monaco, Menlo, "DejaVu Sans Mono",
- "Bitstream Vera Sans Mono", "Courier New", monospace !default;
+  "Bitstream Vera Sans Mono", "Courier New", monospace !default;
 
 // Color of code highlight, solarized.
 $code-highlight-color: (
@@ -209,8 +211,7 @@ $code-highlight-color: (
   attribute: #b58900,
   symbol: #cb4b16,
   built_in: #dc322f,
-  formula: #eee8d5
-) !default;
+  formula: #eee8d5) !default;
 
 // Code type list.
 $code-type-list: (
@@ -258,7 +259,7 @@ $code-type-list: (
   language-yaml: "YAML",
   language-toml: "TOML",
   language-diff: "Diff"
-) !default;
+  ) !default;
 
 // Color of the code background.
 $code-background: $deputy-color !default;
