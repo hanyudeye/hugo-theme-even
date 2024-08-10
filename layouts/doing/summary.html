@@ -1,4 +1,3 @@
-
 <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
@@ -7,7 +6,7 @@
       {{ with .Params.categories -}}
         <div class="post-category">
           {{ range . -}}
-           <a href="{{ "categories" | relLangURL }}/{{ . | urlize }}/"> {{ . }} </a>
+            <a href="{{ "categories" | relLangURL }}/{{ . | urlize }}/"> {{ . }} </a>
           {{ end -}}
         </div>
       {{- end }}
