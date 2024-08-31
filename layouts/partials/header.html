@@ -1,6 +1,8 @@
 <div class="logo-wrapper">
   <a href="{{ "/" | relLangURL }}" class="logo">
-    {{- if .Site.Params.logoTitle -}}
+    {{- if .Site.Params.logoImage -}}
+    <img src="{{.Site.Params.logoImage}}" alt="" srcset="" style="width: 50px; border-radius: 50%;">
+    {{- else if .Site.Params.logoTitle -}}
       {{ .Site.Params.logoTitle }}
     {{- else -}}
       {{ .Site.Title }}
