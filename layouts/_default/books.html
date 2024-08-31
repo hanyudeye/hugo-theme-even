@@ -1,14 +1,12 @@
-<!-- 这里配置列表页要显示的内容 -->
 {{ if ne .Site.Params.version "4.x" -}}
   {{ errorf "\n\nThere are two possible situations that led to this error:\n  1. You haven't copied the config.toml yet. See https://github.com/olOwOlo/hugo-theme-even#installation \n  2. You have an incompatible update. See https://github.com/olOwOlo/hugo-theme-even/blob/master/CHANGELOG.md#400-2018-11-06 \n\n有两种可能的情况会导致这个错误发生:\n  1. 你还没有复制 config.toml 参考 https://github.com/olOwOlo/hugo-theme-even/blob/master/README-zh.md#installation \n  2. 你进行了一次不兼容的更新 参考 https://github.com/olOwOlo/hugo-theme-even/blob/master/CHANGELOG.md#400-2018-11-06 \n" -}}
 {{ end -}}
 
 <!-- 这里配置列表页要显示的内容 -->
-{{- define "content2" -}}
+{{- define "content3" -}}
  <section id="posts" class="posts">
-    {{- $paginator := .Paginate (where (where .Site.RegularPages "Type" "doing") ".Params.hiddenfromhomepage" "!=" true) }}
-    <!-- {{- $paginator := .Paginate (where (where .Site.RegularPages "Type" "carry") ".Params.hiddenfromhomepage" "!=" true) }} -->
-    <!-- {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Type" "carry") }} -->
+    {{/* (index .Site.Paginate) */}}
+    {{- $paginator := .Paginate (where (where .Site.RegularPages "Type" "books") ".Params.hiddenfromhomepage" "!=" true) }}
     {{- range $paginator.Pages -}}
       {{ .Render "summary" }}
     {{ end -}}
@@ -27,9 +25,9 @@
         <i class="iconfont icon-right"></i>
       </a>
     {{- end }}
+
   </nav>
   {{- end -}}
-
 <!DOCTYPE html>
 <html lang="{{ .Site.Language }}">
 <head>
@@ -75,6 +73,8 @@
   </style>
 
   <title>
+
+
     {{- block "title" . -}}
       {{ if .IsPage }}{{ .Title }} - {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}
     {{- end -}}
@@ -93,8 +93,7 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          {{ block "content2" . }}
-          {{ end }}
+          {{ block "content3" . }}{{ end }}
         </div>
         {{ partial "comments.html" . }}
       </div>
