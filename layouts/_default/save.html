@@ -4,9 +4,9 @@
 {{ end -}}
 
 <!-- 这里配置列表页要显示的内容 -->
-{{- define "content21" -}}
+{{- define "content201" -}}
  <section id="posts" class="posts">
-    {{- $paginator := .Paginate (where (where .Site.RegularPages "Type" "people") ".Params.hiddenfromhomepage" "!=" true) }}
+    {{- $paginator := .Paginate (where (where .Site.RegularPages "Type" "save") ".Params.hiddenfromhomepage" "!=" true) }}
     <!-- {{- $paginator := .Paginate (where (where .Site.RegularPages "Type" "carry") ".Params.hiddenfromhomepage" "!=" true) }} -->
     <!-- {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Type" "carry") }} -->
     {{- range $paginator.Pages -}}
@@ -93,7 +93,7 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          {{ block "content21" . }}
+          {{ block "content201" . }}
           {{ end }}
         </div>
         {{ partial "comments.html" . }}
