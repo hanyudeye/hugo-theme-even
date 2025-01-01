@@ -1,11 +1,11 @@
 <div class="logo-wrapper">
-  <a href="{{ "/" | relLangURL }}" class="logo">
+  <a href="{{ " /" | relLangURL }}" class="logo">
     {{- if .Site.Params.logoImage -}}
     <img src="{{.Site.Params.logoImage}}" alt="" srcset="" style="width: 50px; border-radius: 50%;">
     {{- else if .Site.Params.logoTitle -}}
-      {{ .Site.Params.logoTitle }}
+    {{ .Site.Params.logoTitle }}
     {{- else -}}
-      {{ .Site.Title }}
+    {{ .Site.Title }}
     {{- end -}}
   </a>
 </div>
@@ -15,9 +15,12 @@
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     {{ range .Site.Menus.main -}}
-      <li class="menu-item">
-        <a class="menu-item-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
-      </li>
+    <li class="menu-item">
+      <a class="menu-item-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
+    </li>
     {{- end }}
+    <li class="menu-item">
+      <button id="theme-toggle">切换模式</button>
+    </li>
   </ul>
 </nav>

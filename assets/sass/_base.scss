@@ -19,6 +19,12 @@ body {
   border-top: 3px solid $theme-color;
 }
 
+/* 暗黑模式 */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
 @include max-screen() {
   body {
     border-top: 0;
@@ -68,7 +74,15 @@ $size in $global-headings {
 .container {
   margin: 0 auto;
   width: $global-body-width;
-  background-color: $white !important;
+  // background-color: $white !important;
+  background-color: $white;
+}
+
+.container.dark-mode {
+  margin: 0 auto;
+  width: $global-body-width;
+  background-color: #121212;
+  color: #ffffff;
 }
 
 // 添加段落的样式

@@ -277,3 +277,31 @@ Even.responsiveTable = function() {
   }
 };
 
+// 明亮，暗黑模式切换
+// 获取按钮和保存主题的 key
+
+const themeToggle = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme');
+const container = document.getElementById('mobile-panel');
+
+// 检查用户是否有已保存的主题偏好
+if (currentTheme === 'dark') {
+  document.body.classList.add('dark-mode');
+  themeToggle.textContent = '切换为明亮模式';
+  container.classList.add('dark-mode');
+}
+
+// 切换功能
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  container.classList.toggle('dark-mode');
+
+  // 根据模式设置按钮文字并保存到 localStorage
+  if (document.body.classList.contains('dark-mode')) {
+    themeToggle.textContent = '切换为明亮模式';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    themeToggle.textContent = '切换为暗黑模式';
+    localStorage.setItem('theme', 'light');
+  }
+});
