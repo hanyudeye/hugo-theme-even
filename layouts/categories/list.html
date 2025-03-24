@@ -1,0 +1,10 @@
+{{ define "main" }}
+<h1>Categories</h1>
+<ul>
+  {{ range .Site.Taxonomies.categories }}
+    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
+  {{ end }}
+</ul>
+{{ end }}
+
+categories 列表
