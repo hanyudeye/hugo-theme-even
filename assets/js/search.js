@@ -14,12 +14,12 @@ document.addEventListener("click", event => {
   var cDom = document.getElementById("fastSearch");
   var sDom = document.getElementById('search-click');
   var tDom = event.target;
-  if (sDom == tDom || sDom.contains(tDom)) {
+  if (sDom && (sDom == tDom || sDom.contains(tDom))) {
     showSearchInput();
-  } else if (cDom == tDom || cDom.contains(tDom)) {
+  } else if (cDom && (cDom == tDom || cDom.contains(tDom))) {
     // ...
   } else if (searchVisible) {
-    cDom.style.display = "none"
+    if (cDom) cDom.style.display = "none";
     searchVisible = false;
   }
 });
@@ -27,12 +27,12 @@ document.addEventListener("click", event => {
 document.addEventListener('keydown', function(event) {
  
   // CMD-/ to show / hide Search
-  if (event.metaKey && event.which === 191) {
+  if (event.metaKey && event.key === "/") {
       showSearchInput()
   }
  
   // Allow ESC (27) to close search box
-  if (event.keyCode == 27) {
+  if (event.key === "Escape") {
     if (searchVisible) {
       document.getElementById("fastSearch").style.display = "none";
       document.activeElement.blur();
@@ -41,7 +41,7 @@ document.addEventListener('keydown', function(event) {
   }
  
   // DOWN (40) arrow
-  if (event.keyCode == 40) {
+  if (event.key === "ArrowDown") {
     if (searchVisible && resultsAvailable) {
       event.preventDefault(); // stop window from scrolling
       if ( document.activeElement == maininput) { first.focus(); } // if the currently focused element is the main input --> focus the first <li>
@@ -51,7 +51,7 @@ document.addEventListener('keydown', function(event) {
   }
  
   // UP (38) arrow
-  if (event.keyCode == 38) {
+  if (event.key === "ArrowUp") {
     if (searchVisible && resultsAvailable) {
       event.preventDefault(); // stop window from scrolling
       if ( document.activeElement == maininput) { maininput.focus(); } // If we're in the input box, do nothing

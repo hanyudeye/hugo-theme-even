@@ -292,6 +292,7 @@ if (currentTheme === 'dark') {
 }
 
 // 切换功能
+if(themeToggle){
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
   container.classList.toggle('dark-mode');
@@ -305,3 +306,4 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('theme', 'light');
   }
 });
+}

@@ -16,3 +16,10 @@ if (window.hljs) {
   Even.chroma();
 }
 
+var el = document.getElementById('xxx');
+if (el) {
+  el.addEventListener('click', function() {
+    // ...
+  });
+}
+
