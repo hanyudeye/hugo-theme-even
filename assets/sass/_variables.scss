@@ -42,7 +42,8 @@ $yellow: #f5f5d5 !default;
 
 // ========== Global ========== //
 // Text color of the body.
-$global-font-color: #34495e !default;
+// $global-font-color: #34495e !default; //字体颜色偏淡
+$global-font-color: #111  !default;
 
 // Font size attribute applied to '<html>' and '<body>'.
 $global-font-size: 16px !default;
@@ -76,6 +77,8 @@ $global-headings: (
   h5: 14px,
   h6: 14px) !default;
 
+// 设置字间距
+$global-letter-spacing: 0.03em !default;
 
 // ========== Header ========== //
 // Padding of the site header.
