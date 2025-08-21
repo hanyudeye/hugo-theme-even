@@ -153,9 +153,10 @@
 
   hr {
     margin: 1rem 0;
+    height: 1px;
     position: relative;
-    border-top: 2px dashed $theme-color;
-    border-bottom: none;
+    background: linear-gradient(to right, #f7f4f4, #444344);
+    border: none;
   }
 
   .footnote-ref {
